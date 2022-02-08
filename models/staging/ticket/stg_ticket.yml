@@ -1,0 +1,143 @@
+version: 2 
+
+models:
+    - name: stg_allevents
+      columns:
+        - name: eventid
+          description: Primary key for events.
+          tests:
+            - unique
+            - not_null
+        - name: venueid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_venue')
+                field: venueid
+        - name: catid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_category')
+                field: catid
+        - name: dateid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_date')
+                field: dateid
+
+    - name: stg_allusers
+      columns:
+        - name: userid
+          description: Primary key for users.
+          tests:
+            - unique 
+            - not_null
+
+    - name: stg_category
+      columns:
+        - name: catid
+          description: Primary key for categories.
+          tests:
+              - unique 
+              - not_null
+
+    - name: stg_date
+      columns:
+        - name: dateid
+          description: Primary key for dates.
+          tests:
+              - unique 
+              - not_null
+        - name: caldate
+          tests:
+            - not_null
+        - name: day
+          tests:
+            - not_null
+        - name: week
+          tests:
+            - not_null
+        - name: month
+          tests:
+            - not_null
+        - name: qtr
+          tests:
+            - not_null
+        - name: year
+          tests:
+            - not_null
+        
+    - name: stg_listings
+      columns:
+        - name: listid
+          description: Primary key for listings.
+          tests:
+              - unique 
+              - not_null
+        - name: sellerid
+          tests:
+            - not_null
+        - name: eventid
+          tests:
+            - not_null
+        - name: dateid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_date')
+                field: dateid
+        - name: numtickets
+          tests:
+            - not_null
+        
+    - name: stg_sales
+      columns:
+        - name: salesid
+          description: Primary key for sales.
+          tests:
+            - unique 
+            - not_null   
+        - name: listid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_listings')
+                field: listid
+        - name: sellerid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_listings')
+                field: sellerid  
+        - name: buyerid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_allusers')
+                field: userid 
+        - name: eventid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_allevents')
+                field: eventid 
+        - name: dateid
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_date')
+                field: dateid 
+        - name: qtysold
+          tests:
+            - not_null
+
+    - name: stg_venue
+      columns:
+        - name: venueid
+          description: Primary key for venues.
+          tests:
+            - unique 
+            - not_null
+           
