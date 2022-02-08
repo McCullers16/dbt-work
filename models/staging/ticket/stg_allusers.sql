@@ -10,3 +10,5 @@ CAST({{boolean_col}} AS INT64) AS {{boolean_col}}
 {%- endif %}
 {%- endfor %}
 from {{source('ticket','allusers')}}
+
+-- Here demonstrating the technique from the dbt course. This elimintated my use of the manual code to convert every TRUE to 1 and False to 0 that I had in my Module 2 homework.

@@ -9,7 +9,7 @@ sources:
           description: Pulling my All Events Data from the ticket data for all_events_pipe.
           columns:
             - name: eventid
-              description: Matching primary key for events.
+              description: Matching primary key for events that was similar to my work in module 2.
               tests:
                 - unique 
                 - not_null
@@ -24,28 +24,28 @@ sources:
               - not_null
 
         - name: allusers
-          description: Raw Users Data.
+          description: Pulling my All Users data from my allusers_pipe file uploaded into BigQuery as allusers.
           columns:
             - name: userid
-              description: Primary key for users.
+              description: Similar reasoning for primary key for users like in Module 2.
               tests:
                 - unique 
                 - not_null
 
         - name: category
-          description: Raw Event Category Data.
+          description: Pulling my Category data from my category_pipe file uploaded into BigQuery as category.
           columns:
             - name: catid
-              description: Primary key for categories.
+              description: Similar reasoning for the primary key for categories like in Module 2.
               tests:
               - unique 
               - not_null
 
         - name: date
-          description: Raw Event Date Data.
+          description: Pulling my Date data from my date2008 file uploaded into BigQuery.
           columns:
             - name: dateid
-              description: Primary key for dates.
+              description: Similar reasoning for the primary key for dates like in Module 2.
               tests:
               - unique 
               - not_null
@@ -69,10 +69,10 @@ sources:
               - not_null
         
         - name: listings
-          description: Raw Ticket Listing Data.
+          description: Pulling my Listing data from my listings_pipe file loaded into BigQuery as listings.
           columns:
             - name: listid
-              description: Primary key for listings.
+              description: Similar reasoning for the primary key for listings as in Module 2.
               tests:
               - unique 
               - not_null
@@ -90,10 +90,10 @@ sources:
               - not_null
         
         - name: sales
-          description: Raw Ticket Sales Data.
+          description: Pulling my Sales data from my allsales_pipe uploaded into BigQuery as sales.
           columns:
             - name: salesid
-              description: Primary key for sales.
+              description: Similar reasoning for the primary key for sales as in Module 2.
               tests:
               - unique 
               - not_null
@@ -117,10 +117,10 @@ sources:
               - not_null
         
         - name: venue
-          description: Raw Event Venue Data.
+          description: Pulling my Venue data from the venue_pipe data uploaded into BigQuery as venue.
           columns:
             - name: venueid
-              description: Primary key for venues.
+              description: Similar reasoning for the primary key for venues as in Module 2.
               tests:
               - unique 
               - not_null
