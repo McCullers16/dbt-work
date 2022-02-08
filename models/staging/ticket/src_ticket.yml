@@ -6,7 +6,7 @@ sources:
       schema: raw_data
       tables:
         - name: allevents
-          description: Pulling my All Events Data from .
+          description: Pulling my All Events Data from the ticket data for all_events_pipe.
           columns:
             - name: eventid
               description: Matching primary key for events.
