@@ -30,3 +30,4 @@ final as (
 
 select * from final
 
+-- As from lineage this shows me performing my joins with events to category, venue, and date. 

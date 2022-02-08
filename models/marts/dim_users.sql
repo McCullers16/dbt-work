@@ -44,3 +44,5 @@ final as (
 )
   
 select * from final
+
+-- As you can see from lineage I am connecting multiple tables such as users with my created buyer_sales and seller_sales. I have created variables to help identify questions from the module 2 data.
