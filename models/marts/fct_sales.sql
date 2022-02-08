@@ -18,3 +18,5 @@ final as (
 )
 
 select * from final
+
+-- As you can see from my code above I try to answer the question on commission to show the commission rate. I am able to quickly show to users the 15 percent fixed commission rate. I can show the sales date for these transactions.
